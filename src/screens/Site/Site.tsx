@@ -5,50 +5,69 @@ import { TournamentBracketSection } from "./sections/TournamentBracketSection/To
 import { TournamentDetailsSection } from "./sections/TournamentDetailsSection/TournamentDetailsSection";
 
 export const Site = (): JSX.Element => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <div className="relative bg-black">
-      {/* Top background image section - only visible at top */}
-      <div className="flex flex-col min-h-screen bg-black">
+    <div className="relative bg-black min-h-screen flex flex-col">
+      {/* Fixed navigation */}
+      <NavigationHeaderSection />
+
+      {/* Hero section with background */}
+      <section className="relative w-full h-screen overflow-hidden">
+        {/* Background image - fills entire hero */}
         <img
-          className="w-full h-auto object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
           alt="Background"
           src="/1background.png"
         />
 
-        {/* Side decorative images - only at top, fixed positioning */}
+        {/* Side decorations */}
         <img
           className="absolute top-0 left-0 w-[25vw] max-w-[460px] h-auto object-contain z-10 pointer-events-none"
-          style={{ transformOrigin: "center" }}
           alt="Left decoration"
           src="/side-decor.png"
         />
         <img
-          className="absolute top-[0px] right-0 w-[25vw] max-w-[460px] h-auto object-contain z-10 scale-x-[-1]"
-          style={{ transformOrigin: "center" }}
+          className="absolute top-0 right-0 w-[25vw] max-w-[460px] h-auto object-contain z-10 scale-x-[-1]"
           alt="Right decoration"
           src="/side-decor.png"
         />
 
-        {/* Gradient overlays */}
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-black/30 to-black pointer-events-none z-5" />
-      </div>
-       <div
-       className="absolute top-0 left-0 w-full h-[20%] bg-gradient-to-b from-black via-black/80 to-transparent z-10 pointer-events-none"
+        {/* Top dark gradient */}
+        <div className="absolute top-0 left-0 w-full h-[25%] bg-gradient-to-b from-black via-black/70 to-transparent z-10 pointer-events-none" />
+
+        {/* Bottom gradient to black */}
+        <div className="absolute bottom-0 left-0 w-full h-[35%] bg-gradient-to-t from-black via-black/70 to-transparent z-10 pointer-events-none" />
+
+        {/* Clouds at the very bottom */}
+        <img
+          className="absolute bottom-0 left-0 w-full h-auto object-cover z-[5] pointer-events-none opacity-60"
+          alt="Clouds"
+          src="/clouds.webp"
         />
 
-      {/* Main content stacked vertically in document flow */}
-      <div className="flex flex-col min-h-screen bg-black">
-        <NavigationHeaderSection />
-         <main className="flex-1">
-        <HeroBannerSection />
-        <TournamentDetailsSection />
-        <TournamentBracketSection /> 
-        </main>
-       <SocialMediaFooterSection />
-</div>
+        {/* Hero content centered */}
+        <div className="absolute inset-0 z-20 flex items-center justify-center pt-[60px]">
+          <HeroBannerSection />
+        </div>
+      </section>
 
-      {/* Arrow scroll-to-top button */}
-      <div className="fixed bottom-8 right-8 w-8 h-[31px] bg-[url(/arrow.png)] bg-[100%_100%] z-50" />
+      {/* Main content */}
+      <main className="flex-1 bg-black relative z-10">
+        <TournamentDetailsSection />
+        <TournamentBracketSection />
+      </main>
+
+      {/* Footer */}
+      <SocialMediaFooterSection />
+
+      {/* Arrow scroll-to-top */}
+      <div
+        onClick={scrollToTop}
+        className="fixed bottom-8 right-8 w-8 h-[31px] bg-[url(/arrow.png)] bg-[100%_100%] z-50 cursor-pointer hover:opacity-80 transition-opacity"
+      />
     </div>
   );
 };
