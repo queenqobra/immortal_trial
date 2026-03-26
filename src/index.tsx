@@ -1,4 +1,4 @@
-import "c:/Users/Jane/Desktop/immortality/project/tailwind.css";
+import "./index.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { Site } from "./screens/Site";
