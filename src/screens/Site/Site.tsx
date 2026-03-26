@@ -14,11 +14,11 @@ export const Site = (): JSX.Element => {
       {/* Fixed navigation */}
       <NavigationHeaderSection />
 
-      {/* Hero with background */}
-      <div className="relative w-full">
-        {/* Background image */}
+      {/* Hero section with background */}
+      <section className="relative w-full h-screen overflow-hidden">
+        {/* Background image - fills entire hero */}
         <img
-          className="w-full h-auto object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
           alt="Background"
           src="/1background.png"
         />
@@ -36,19 +36,26 @@ export const Site = (): JSX.Element => {
         />
 
         {/* Top dark gradient */}
-        <div className="absolute top-0 left-0 w-full h-[20%] bg-gradient-to-b from-black via-black/80 to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 left-0 w-full h-[25%] bg-gradient-to-b from-black via-black/70 to-transparent z-10 pointer-events-none" />
 
-        {/* Bottom dark gradient */}
-        <div className="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-black via-black/60 to-transparent pointer-events-none z-10" />
+        {/* Bottom gradient to black */}
+        <div className="absolute bottom-0 left-0 w-full h-[35%] bg-gradient-to-t from-black via-black/70 to-transparent z-10 pointer-events-none" />
 
-        {/* Hero content overlay */}
-        <div className="absolute inset-0 z-20 flex items-center justify-center">
+        {/* Clouds at the very bottom */}
+        <img
+          className="absolute bottom-0 left-0 w-full h-auto object-cover z-[5] pointer-events-none opacity-60"
+          alt="Clouds"
+          src="/clouds.webp"
+        />
+
+        {/* Hero content centered */}
+        <div className="absolute inset-0 z-20 flex items-center justify-center pt-[60px]">
           <HeroBannerSection />
         </div>
-      </div>
+      </section>
 
       {/* Main content */}
-      <main className="flex-1 bg-black">
+      <main className="flex-1 bg-black relative z-10">
         <TournamentDetailsSection />
         <TournamentBracketSection />
       </main>
@@ -56,7 +63,7 @@ export const Site = (): JSX.Element => {
       {/* Footer */}
       <SocialMediaFooterSection />
 
-      {/* Arrow scroll-to-top button */}
+      {/* Arrow scroll-to-top */}
       <div
         onClick={scrollToTop}
         className="fixed bottom-8 right-8 w-8 h-[31px] bg-[url(/arrow.png)] bg-[100%_100%] z-50 cursor-pointer hover:opacity-80 transition-opacity"
