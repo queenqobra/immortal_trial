@@ -8,7 +8,7 @@ import {
 
 const navItems = [
   { label: "СЕТКА", href: "#grid" },
-  { label: "ИНФОРМАЦИЯ", href: "#info" },
+  { label: "О ТУРНИРЕ", href: "#tournament" },
 ];
 
 export const NavigationHeaderSection = (): JSX.Element => {
@@ -23,14 +23,14 @@ export const NavigationHeaderSection = (): JSX.Element => {
             {navItems.map((item) => (
               <NavigationMenuItem key={item.label}>
                 <NavigationMenuLink asChild>
-                  <a
-                    href={item.href}
-                    className="flex items-center justify-center w-[500px] h-[30px] font-literature text-white text-[15px] tracking-[0.30px] leading-[0.1px] font-normal text-center cursor-pointer hover:opacity-80 transition-opacity bg-transparent"
-                    onClick={() => setActiveItem(item.label)}
-                  >
-                    {item.label}
-                  </a>
-                </NavigationMenuLink>
+  <a
+    href={item.href}
+    className="flex items-center justify-center w-[500px] h-[30px] font-literature text-white text-[15px] min-text-[10px] tracking-[0.30px] leading-[0.1px] font-normal text-center cursor-pointer hover:opacity-80 transition-opacity bg-transparent"
+    onClick={() => setActiveItem(item.label)}
+  >
+    {item.label}
+  </a>
+</NavigationMenuLink>
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>
