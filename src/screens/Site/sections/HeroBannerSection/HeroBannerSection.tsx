@@ -1,27 +1,20 @@
 export const HeroBannerSection = (): JSX.Element => {
   return (
-    <div className="relative z-10 flex flex-col items-center justify-center w-full px-4">
-      {/* Logo area with wings - all float together */}
-      <div className="relative w-[90vw] max-w-[700px] h-[50vw] max-h-[420px] animate-[float_4s_ease-in-out_infinite]">
-        {/* Wing LEFT */}
-        <img
-          src="/wing.png"
-          alt="Left wing"
-          className="absolute top-[15%] left-[-18%] w-[30%] h-auto pointer-events-none"
-        />
-        {/* Wing RIGHT */}
-        <img
-          src="/wing1.png"
-          alt="Right wing"
-          className="absolute top-[15%] right-[-18%] w-[30%] h-auto pointer-events-none"
-        />
-        {/* Central logo */}
-        <img
-          src="/TOIlogo.png"
-          alt="TOI Logo"
-          className="absolute inset-0 w-full h-full object-contain pointer-events-none"
-        />
+    <div className="relative z-10 flex flex-col items-center justify-center gap-2 w-full  ">
+      {/* Logo area with wings */}
+      <div className=" w-[700px] h-[420px]  bg-contain bg-center bg-no-repeat animate-[float_4s_ease-in-out_infinite] ">
+        {/* Right wing */}
+        <div className="absolute top-[60px] right-[117%] translate-x-[260px] w-[140px] h-[190px] bg-[url(/wing.png)] 
+        bg-[100%_100%] scale-[1.5] " />
+        {/* Left wing */}
+        <div className="absolute top-[60px] right-[37%]  translate-x-[260px] w-[140px] h-[190px] bg-[url(/wing1.png)] bg-[100%_100%] scale-[1.5] " />
+        {/* Central logo - enlarged */}
+        <div className="absolute scale-[1.5] top-0 left-1/2 -translate-x-1/2 w-[700px] h-[420px] bg-[url(/toIlogo.png)] bg-contain bg-center bg-no-repeat" />
       </div>
+<div className="absolute top-[380px] flex flex-col items-center gap-2">
+  <div className="w-[700px] h-[1px] bg-red-600 opacity-70"></div>
+  <div className="w-[700px] h-[1px] bg-red-600 opacity-40"></div>
+</div>
 
       {/* Red decorative lines */}
       <div className="flex flex-col items-center gap-1.5 w-full max-w-[700px] mt-2">
