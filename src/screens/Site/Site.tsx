@@ -1,4 +1,3 @@
-
 import { HeroBannerSection } from "./sections/HeroBannerSection";
 import { NavigationHeaderSection } from "./sections/NavigationHeaderSection";
 import { SocialMediaFooterSection } from "./sections/SocialMediaFooterSection";
@@ -105,6 +104,16 @@ export const Site = (): JSX.Element => {
       filter: "drop-shadow(0 0 10px white)"
     }}
   />
+
+</div>
+
+<SocialMediaFooterSection />
+
+      
+</div>
+    
+  );
+};
 
 </div>
 
