@@ -65,6 +65,7 @@ module.exports = {
       kudry: ["Kudry"],
       frenchcanon: ["IMFellFrenchCanonSC"],
       orbitronrus: ["OrbitronRUS"]
+      
     
 
     
@@ -88,4 +89,5 @@ module.exports = {
   },
   plugins: [],
   darkMode: ["class"],
+  
 };

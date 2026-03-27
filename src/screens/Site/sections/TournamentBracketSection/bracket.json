@@ -1,0 +1,20 @@
+{
+  "upper": [
+    [
+      { "team1": "Team 1", "team2": "Team 2" },
+      { "team1": "Team 3", "team2": "Team 4" }
+    ],
+    [
+      { "team1": "Winner 1", "team2": "Winner 2" }
+    ]
+  ],
+  "lower": [
+    [
+      { "team1": "Loser 1", "team2": "Loser 2" }
+    ]
+  ],
+  "grandFinal": {
+    "team1": "Winner UB",
+    "team2": "Winner LB"
+  }
+}
